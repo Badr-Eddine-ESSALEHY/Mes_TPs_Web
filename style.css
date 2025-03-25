@@ -1,64 +1,88 @@
+/* Global Styles */
 body {
-    font-family: sans-serif;
-    margin: 20px;
+    font-family: 'Arial', sans-serif;
     background-color: #f4f4f4;
-}
-
-header {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-    margin-bottom: 20px;
-}
-
-#project-list {
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: white;
-    padding: 10px;
-}
-
-.directory {
-    margin-bottom: 10px;
-    border: 1px solid #eee;
-    padding: 10px;
-}
-
-.directory h2 {
-    cursor: pointer;
-    margin: 0;
-    padding: 5px;
-    background-color: #f0f0f0;
-    border-radius: 3px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.directory h2::after {
-    content: '+';
-}
-
-.directory.open h2::after {
-    content: '-';
-}
-
-.directory .files {
-    display: none;
-    padding-left: 20px;
-}
-
-.directory.open .files {
-    display: block;
-}
-
-.file-link {
-    display: block;
-    padding: 5px;
-    text-decoration: none;
     color: #333;
+    margin: 0;
+    padding: 20px;
 }
 
-.file-link:hover {
-    background-color: #f0f0f0;
+/* Container Styling */
+.directory-list {
+    max-width: 600px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* List Styling */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+/* Directory Headers */
+h1 {
+    font-size: 18px;
+    background: #007bff;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+h1:hover {
+    background: #0056b3;
+}
+
+/* File Links */
+a {
+    text-decoration: none;
+    color: #007bff;
+    display: block;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+a:hover {
+    background: #007bff;
+    color: white;
+}
+
+/* Nested Lists (Initially Hidden) */
+ul ul {
+    display: none;
+    margin-top: 5px;
+    padding-left: 20px;
+    border-left: 3px solid #007bff;
+}
+
+/* Show Nested List When Parent is Active */
+li.active ul {
+    display: block;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .directory-list {
+        max-width: 100%;
+        padding: 15px;
+    }
+    
+    h1 {
+        font-size: 16px;
+        padding: 8px;
+    }
+    
+    a {
+        font-size: 14px;
+    }
 }

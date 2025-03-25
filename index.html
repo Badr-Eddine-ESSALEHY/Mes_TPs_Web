@@ -1,141 +1,77 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Web Projects</title>
-</head>
-<body>
-    <div class="directory-list">
-        <ul>
-            <li>
-                <h1 onclick="toggleDirectory(this.parentElement)">TP1</h1>
-                <ul>
-                    <li><a href="TP1/Les Balises d'Organisation.html">Les Balises d'Organisation.html</a></li>
-                    <li><a href="TP1/Les Balises de Base.html">Les Balises de Base.html</a></li>
-                    <li><a href="TP1/Les Graphiques.html">Les Graphiques.html</a></li>
-                    <li><a href="TP1/Les Listes et Définitions.html">Les Listes et Définitions.html</a></li>
-                    <li><a href="TP1/docs/TP1.pdf">TP1.pdf</a></li>
-                    <li><a href="TP1/images/green.gif">green.gif</a></li>
-                </ul>
-            </li>
-            <li>
-                <h1 onclick="toggleDirectory(this.parentElement)">TP2</h1>
-                <ul>
-                    <li><a href="TP2_etudiants/Partie 1 exercice 2.html">Partie 1 exercice 2.html</a></li>
-                    <li><a href="TP2_etudiants/Partie1 exercice 1.html">Partie 1 exercice 1.html</a></li>
-                    <li><a href="TP2_etudiants/docs/TP2.pdf">TP2.pdf</a></li>
-                </ul>
-            </li>
-            <li>
-                <h1 onclick="toggleDirectory(this.parentElement)">TP3</h1>
-                <ul>
-                    <li><a href="TP-3/Activité 1.html">Activité 1.html</a></li>
-                    <li><a href="TP-3/Activité 3.html">Activité 3.html</a></li>
-                    <li><a href="TP-3/Activité2.html">Activité 2.html</a></li>
-                    <li><a href="TP-3/authentification.html">Authentification.html</a></li>
-                    <li><a href="TP-3/style.css">style.css</a></li>
-                    <li><a href="TP-3/docs/TP3_Maitriser les feuilles de style CSS - MGSI IL.pdf">TP3_Maitriser les feuilles de style CSS.pdf</a></li>
-                    <li><a href="TP-3/images/logo.jpg">logo.jpg</a></li>
-                </ul>
-            </li>
-            <li>
-                <h1 onclick="toggleDirectory(this.parentElement)">TP5</h1>
-                <ul>
-                    <li><a href="tp5/Activité 3.html">Activité 3.html</a></li>
-                    <li><a href="tp5/Activité2 exercice 1.html">Activité2 exercice 1.html</a></li>
-                    <li><a href="tp5/docs/TP5_JavaScript les fondamentaux.pdf">TP5 JavaScript les fondamentaux.pdf</a></li>
-                </ul>
-            </li>
-            <li>
-                <h1 onclick="toggleDirectory(this.parentElement)">TP6</h1>
-                <ul>
-                    <li><a href="TP6/Exercice 2.html">Exercice 2.html</a></li>
-                    <li><a href="TP6/Exercice 1.html">Exercice 1.html</a></li>
-                    <li><a href="TP6/Exercice 3.html">Exercice 3.html</a></li>
-                    <li><a href="TP6/images/First.jpg">First.jpg</a></li>
-                    <li><a href="TP6/images/Second.webp">Second.webp</a></li>
-                </ul>
-            </li>
-        </ul>
-    </div>
-
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-    const projectList = document.getElementById('project-list');
-    const projects = [
-        {
-            name: 'TP1',
-            files: [
-                'Les Balises d\'Organisation.html',
-                'Les Balises de Base.html',
-                'Les Graphiques.html',
-                'Les Listes et Définitions.html',
-                'docs/TP1.pdf',
-                'images/green.gif'
-            ]
-        },
-        {
-            name: 'TP2_etudiants',
-            files: [
-                'Partie 1 exercice 2.html',
-                'Partie1 exercice 1.html',
-                'docs/TP2.pdf'
-            ]
-        },
-        {
-            name: 'TP-3',
-            files: [
-                'Activité 1.html',
-                'Activité 3.html',
-                'Activité2.html',
-                'authentification.html',
-                'style.css',
-                'docs/TP3_Maitriser les feuilles de style CSS - MGSI IL.pdf',
-                'images/logo.jpg'
-            ]
-        },
-        {
-            name: 'tp5',
-            files: [
-                'Activité 3.html',
-                'Activité2 exercice 1.html',
-                'docs/TP5_JavaScript les fondamentaux.pdf'
-            ]
-        },
-        {
-            name: 'TP6',
-            files: [
-                'Exercice 2.html',
-                'Exercice 1.html',
-                'Exercice 3.html',
-                'images/First.jpg',
-                'images/Second.webp'
-            ]
-        }
-    ];
-
-    projects.forEach(project => {
-        const directoryDiv = document.createElement('div');
-        directoryDiv.className = 'directory';
-        directoryDiv.innerHTML = `<h2>${project.name}</h2><div class="files"></div>`;
-
-        const filesDiv = directoryDiv.querySelector('.files');
-        project.files.forEach(file => {
-            const fileLink = document.createElement('a');
-            fileLink.className = 'file-link';
-            fileLink.href = `${project.name}/${file}`;
-            fileLink.textContent = file;
-            filesDiv.appendChild(fileLink);
-        });
-
-        directoryDiv.querySelector('h2').addEventListener('click', function() {
-            directoryDiv.classList.toggle('open');
-        });
-
-        projectList.appendChild(directoryDiv);
-    });
-});
-    </script>
-</body>
-</html>
+<div class="directory-list">
+    <ul>
+        <li>
+            <h1 onclick="toggleDirectory(this.parentElement)">TP1</h1>
+            <ul>
+                <li><a href="TP1/index.html">index.html</a></li>
+                <li><a href="TP1/Les Balises d'Organisation.html">Les Balises d'Organisation.html</a></li>
+                <li><a href="TP1/Les Balises de Base.html">Les Balises de Base.html</a></li>
+                <li><a href="TP1/Les Graphiques.html">Les Graphiques.html</a></li>
+                <li><a href="TP1/Les Listes et Définitions.html">Les Listes et Définitions.html</a></li>
+                <li><a href="TP1/Les Styles Physiques.html">Les Styles Physiques.html</a></li>
+                <li><a href="TP1/Partie2.html">Partie2.html</a></li>
+                <li><a href="TP1/Partie23.html">Partie23.html</a></li>
+                <li><a href="TP1/TP1exercice2.html">TP1exercice2.html</a></li>
+                <li><a href="TP1/docs/TP1.pdf">TP1.pdf</a></li>
+                <li><a href="TP1/images/green.gif">green.gif</a></li>
+                <li><a href="TP1/images/map.gif">map.gif</a></li>
+                <li><a href="TP1/images/red.gif">red.gif</a></li>
+                <li><a href="TP1/images/yellow.gif">yellow.gif</a></li>
+            </ul>
+        </li>
+        <li>
+            <h1 onclick="toggleDirectory(this.parentElement)">TP2</h1>
+            <ul>
+                <li><a href="TP2_etudiants/index.html">index.html</a></li>
+                <li><a href="TP2_etudiants/Partie1 exercice 1.html">Partie 1 exercice 1.html</a></li>
+                <li><a href="TP2_etudiants/Partie2 question2.html">Partie2 question2.html</a></li>
+                <li><a href="TP2_etudiants/Partie2 question3.html">Partie2 question3.html</a></li>
+                <li><a href="TP2_etudiants/Partie2_Exercice1.html">Partie2_Exercice1.html</a></li>
+                <li><a href="TP2_etudiants/docs/TP2.pdf">TP2.pdf</a></li>
+            </ul>
+        </li>
+        <li>
+            <h1 onclick="toggleDirectory(this.parentElement)">TP3</h1>
+            <ul>
+                <li><a href="TP-3/index.html">index.html</a></li>
+                <li><a href="TP-3/Activité 3.html">Activité 3.html</a></li>
+                <li><a href="TP-3/Activité2.html">Activité2.html</a></li>
+                <li><a href="TP-3/authentification.html">Authentification.html</a></li>
+                <li><a href="TP-3/authentification.css">Authentification.css</a></li>
+                <li><a href="TP-3/Synthese3.html">Synthese3.html</a></li>
+                <li><a href="TP-3/Synthese3.css">Synthese3.css</a></li>
+                <li><a href="TP-3/style.css">style.css</a></li>
+                <li><a href="TP-3/style2.css">style2.css</a></li>
+                <li><a href="TP-3/style3.css">style3.css</a></li>
+                <li><a href="TP-3/docs/TP3_Maitriser les feuilles de style CSS - MGSI IL.pdf">TP3_Maitriser les feuilles de style CSS.pdf</a></li>
+                <li><a href="TP-3/images/logo.jpg">logo.jpg</a></li>
+            </ul>
+        </li>
+        <li>
+            <h1 onclick="toggleDirectory(this.parentElement)">TP5</h1>
+            <ul>
+                <li><a href="tp5/index.html">index.html</a></li>
+                <li><a href="tp5/Activité 3.html">Activité 3.html</a></li>
+                <li><a href="tp5/Activité2 exercice 1.html">Activité2 exercice 1.html</a></li>
+                <li><a href="tp5/Activité2 exercice1 1.html">Activité2 exercice1 1.html</a></li>
+                <li><a href="tp5/Ativité2 exercice1 2.html">Ativité2 exercice1 2.html</a></li>
+                <li><a href="tp5/Exercice12.html">Exercice12.html</a></li>
+                <li><a href="tp5/Exercice13.html">Exercice13.html</a></li>
+                <li><a href="tp5/Activité4.js">Activité4.js</a></li>
+                <li><a href="tp5/docs/TP5_JavaScript les fondamentaux.pdf">TP5 JavaScript les fondamentaux.pdf</a></li>
+            </ul>
+        </li>
+        <li>
+            <h1 onclick="toggleDirectory(this.parentElement)">TP6</h1>
+            <ul>
+                <li><a href="TP6/index.html">index.html</a></li>
+                <li><a href="TP6/Exercice 2.html">Exercice 2.html</a></li>
+                <li><a href="TP6/Exercice3.html">Exercice3.html</a></li>
+                <li><a href="TP6/Exercice4.html">Exercice4.html</a></li>
+                <li><a href="TP6/document.pdf">document.pdf</a></li>
+                <li><a href="TP6/images/First.jpg">First.jpg</a></li>
+                <li><a href="TP6/images/Second.webp">Second.webp</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
