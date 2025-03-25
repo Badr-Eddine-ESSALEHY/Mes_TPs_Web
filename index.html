@@ -3,70 +3,202 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Directory List</title>
-    <link rel="stylesheet" href="style.css">
+    <title>My Web Projects</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+
+        .directory-list {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: white;
+            padding: 10px;
+        }
+
+        .directory-list ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .directory-list li {
+            margin-bottom: 10px;
+            border: 1px solid #eee;
+            padding: 10px;
+        }
+
+        .directory-list h1 {
+            cursor: pointer;
+            margin: 0;
+            padding: 5px;
+            background-color: #f0f0f0;
+            border-radius: 3px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .directory-list h1::after {
+            content: '+';
+        }
+
+        .directory-list li.open h1::after {
+            content: '-';
+        }
+
+        .directory-list ul ul {
+            display: none;
+            padding-left: 20px;
+        }
+
+        .directory-list li.open ul {
+            display: block;
+        }
+
+        .directory-list ul ul li a {
+            display: block;
+            padding: 5px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .directory-list ul ul li a:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
 </head>
 <body>
+    <div class="directory-list">
+        <ul>
+            <li>
+                <h1 onclick="toggleDirectory(this.parentElement)">TP1</h1>
+                <ul>
+                    <li><a href="TP1/Les Balises d'Organisation.html">Les Balises d'Organisation.html</a></li>
+                    <li><a href="TP1/Les Balises de Base.html">Les Balises de Base.html</a></li>
+                    <li><a href="TP1/Les Graphiques.html">Les Graphiques.html</a></li>
+                    <li><a href="TP1/Les Listes et Définitions.html">Les Listes et Définitions.html</a></li>
+                    <li><a href="TP1/docs/TP1.pdf">TP1.pdf</a></li>
+                    <li><a href="TP1/images/green.gif">green.gif</a></li>
+                </ul>
+            </li>
+            <li>
+                <h1 onclick="toggleDirectory(this.parentElement)">TP2</h1>
+                <ul>
+                    <li><a href="TP2_etudiants/Partie 1 exercice 2.html">Partie 1 exercice 2.html</a></li>
+                    <li><a href="TP2_etudiants/Partie1 exercice 1.html">Partie 1 exercice 1.html</a></li>
+                    <li><a href="TP2_etudiants/docs/TP2.pdf">TP2.pdf</a></li>
+                </ul>
+            </li>
+            <li>
+                <h1 onclick="toggleDirectory(this.parentElement)">TP3</h1>
+                <ul>
+                    <li><a href="TP-3/Activité 1.html">Activité 1.html</a></li>
+                    <li><a href="TP-3/Activité 3.html">Activité 3.html</a></li>
+                    <li><a href="TP-3/Activité2.html">Activité 2.html</a></li>
+                    <li><a href="TP-3/authentification.html">Authentification.html</a></li>
+                    <li><a href="TP-3/style.css">style.css</a></li>
+                    <li><a href="TP-3/docs/TP3_Maitriser les feuilles de style CSS - MGSI IL.pdf">TP3_Maitriser les feuilles de style CSS.pdf</a></li>
+                    <li><a href="TP-3/images/logo.jpg">logo.jpg</a></li>
+                </ul>
+            </li>
+            <li>
+                <h1 onclick="toggleDirectory(this.parentElement)">TP5</h1>
+                <ul>
+                    <li><a href="tp5/Activité 3.html">Activité 3.html</a></li>
+                    <li><a href="tp5/Activité2 exercice 1.html">Activité2 exercice 1.html</a></li>
+                    <li><a href="tp5/docs/TP5_JavaScript les fondamentaux.pdf">TP5 JavaScript les fondamentaux.pdf</a></li>
+                </ul>
+            </li>
+            <li>
+                <h1 onclick="toggleDirectory(this.parentElement)">TP6</h1>
+                <ul>
+                    <li><a href="TP6/Exercice 2.html">Exercice 2.html</a></li>
+                    <li><a href="TP6/Exercice 1.html">Exercice 1.html</a></li>
+                    <li><a href="TP6/Exercice 3.html">Exercice 3.html</a></li>
+                    <li><a href="TP6/images/First.jpg">First.jpg</a></li>
+                    <li><a href="TP6/images/Second.webp">Second.webp</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
 
-    <header>
-        <h1>Project Directory List</h1>
-        <p>Click on any directory or file to navigate.</p>
-    </header>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+    const projectList = document.getElementById('project-list');
+    const projects = [
+        {
+            name: 'TP1',
+            files: [
+                'Les Balises d\'Organisation.html',
+                'Les Balises de Base.html',
+                'Les Graphiques.html',
+                'Les Listes et Définitions.html',
+                'docs/TP1.pdf',
+                'images/green.gif'
+            ]
+        },
+        {
+            name: 'TP2_etudiants',
+            files: [
+                'Partie 1 exercice 2.html',
+                'Partie1 exercice 1.html',
+                'docs/TP2.pdf'
+            ]
+        },
+        {
+            name: 'TP-3',
+            files: [
+                'Activité 1.html',
+                'Activité 3.html',
+                'Activité2.html',
+                'authentification.html',
+                'style.css',
+                'docs/TP3_Maitriser les feuilles de style CSS - MGSI IL.pdf',
+                'images/logo.jpg'
+            ]
+        },
+        {
+            name: 'tp5',
+            files: [
+                'Activité 3.html',
+                'Activité2 exercice 1.html',
+                'docs/TP5_JavaScript les fondamentaux.pdf'
+            ]
+        },
+        {
+            name: 'TP6',
+            files: [
+                'Exercice 2.html',
+                'Exercice 1.html',
+                'Exercice 3.html',
+                'images/First.jpg',
+                'images/Second.webp'
+            ]
+        }
+    ];
 
-    <main>
-        <div class="directory-list">
-            <ul>
-                <li><h1>TP1</h1>
-                    <ul>
-                        <li><a href="TP1/Les Balises d'Organisation.html">Les Balises d'Organisation.html</a></li>
-                        <li><a href="TP1/Les Balises de Base.html">Les Balises de Base.html</a></li>
-                        <li><a href="TP1/Les Graphiques.html">Les Graphiques.html</a></li>
-                        <li><a href="TP1/Les Listes et Définitions.html">Les Listes et Définitions.html</a></li>
-                        <li><a href="TP1/docs/TP1.pdf">TP1.pdf</a></li>
-                        <li><a href="TP1/images/green.gif">green.gif</a></li>
-                    </ul>
-                </li>
-                <li><h1>TP2</h1>
-                    <ul>
-                        <li><a href="TP2_etudiants/Partie 1 exercice 2.html">Partie 1 exercice 2.html</a></li>
-                        <li><a href="TP2_etudiants/Partie1 exercice 1.html">Partie 1 exercice 1.html</a></li>
-                        <li><a href="TP2_etudiants/docs/TP2.pdf">TP2.pdf</a></li>
-                    </ul>
-                </li>
-                <li><h1>TP3</h1></a>
-                    <ul>
-                        <li><a href="TP-3/Activité 1.html">Activité 1.html</a></li>
-                        <li><a href="TP-3/Activité 3.html">Activité 3.html</a></li>
-                        <li><a href="TP-3/Activité2.html">Activité 2.html</a></li>
-                        <li><a href="TP-3/authentification.html">Authentification.html</a></li>
-                        <li><a href="TP-3/style.css">style.css</a></li>
-                        <li><a href="TP-3/docs/TP3_Maitriser les feuilles de style CSS - MGSI IL.pdf">TP3_Maitriser les feuilles de style CSS.pdf</a></li>
-                        <li><a href="TP-3/images/logo.jpg">logo.jpg</a></li>
-                    </ul>
-                </li>
-                <li><h1>TP5</h1>
-                    <ul>
-                        <li><a href="tp5/Activité 3.html">Activité 3.html</a></li>
-                        <li><a href="tp5/Activité2 exercice 1.html">Activité2 exercice 1.html</a></li>
-                        <li><a href="tp5/docs/TP5_JavaScript les fondamentaux.pdf">TP5 JavaScript les fondamentaux.pdf</a></li>
-                    </ul>
-                </li>
-                <li><h1>TP6</h1>
-                    <ul>
-                        <li><a href="TP6/Exercice 2.html">Exercice 2.html</a></li>
-                        <li><a href="TP6/Exercice 1.html">Exercice 1.html</a></li>
-                        <li><a href="TP6/Exercice 3.html">Exercice 3.html</a></li>
-                        <li><a href="TP6/images/First.jpg">First.jpg</a></li>
-                        <li><a href="TP6/images/Second.webp">Second.webp</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-    </main>
+    projects.forEach(project => {
+        const directoryDiv = document.createElement('div');
+        directoryDiv.className = 'directory';
+        directoryDiv.innerHTML = `<h2>${project.name}</h2><div class="files"></div>`;
 
-    <footer>
-        <p>&copy; 2025 Your Name</p>
-    </footer>
+        const filesDiv = directoryDiv.querySelector('.files');
+        project.files.forEach(file => {
+            const fileLink = document.createElement('a');
+            fileLink.className = 'file-link';
+            fileLink.href = `${project.name}/${file}`;
+            fileLink.textContent = file;
+            filesDiv.appendChild(fileLink);
+        });
 
+        directoryDiv.querySelector('h2').addEventListener('click', function() {
+            directoryDiv.classList.toggle('open');
+        });
+
+        projectList.appendChild(directoryDiv);
+    });
+});
+    </script>
 </body>
 </html>
