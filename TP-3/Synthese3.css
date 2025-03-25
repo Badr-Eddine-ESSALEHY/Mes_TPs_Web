@@ -1,0 +1,33 @@
+#tableau {
+    border: 4px solid #FF0000;
+    width: 60%;
+    margin: 20px auto;
+}
+
+#entete {
+    background-color: #FFFF66;
+    color: #000099;
+    font-style: italic;
+    text-align: center;
+}
+
+#entete th {
+    padding: 10px;
+}
+
+.impaire {
+    background-color: #FFCCCC;
+    font-size: 14px;
+    font-family: "Times New Roman", Times, serif;
+}
+
+.paire {
+    background-color: #66FFFF;
+    font-size: 14px;
+    font-family: "Times New Roman", Times, serif;
+}
+
+td {
+    padding: 8px;
+    text-align: center;
+}

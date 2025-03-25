@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Mode</title>
+    <style>
+        .nuit {
+            color: red;
+            background-color: white;
+            padding: 5px;
+            border: 1px solid black;
+            cursor: pointer;
+        }
+        .Jour {
+            color: black;
+            background-color: white;
+            padding: 5px;
+            border: 1px solid black;
+            cursor: pointer;
+        }
+        .Table {
+            border: solid 1px black;
+        }
+        .Container {
+            text-align: center;
+            padding: 20px;
+            border: 1px solid black;
+            border-radius: 10px;
+            width: 60%;
+        }
+        td {
+            border: solid 1px black;
+            padding: 10px;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: white;
+            color: black;
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+    <div class="Container">
+        <h1>Exercice 1 JS</h1>
+        <h3>Le tableau est :</h3>
+        <table class="Table">
+            <tr>
+                <td>5</td>
+                <td>12</td>
+                <td>10</td>
+                <td>8</td>
+                <td>20</td>
+                <td>16</td>
+                <td>17</td>
+                <td>3</td>
+                <td>10</td>
+            </tr>
+        </table>
+        <br>
+        <button onclick="Nuit()" class="nuit">Nuit</button>
+        <button onclick="Jour()" class="Jour">Jour</button>
+    </div>
+
+    <script>
+        function Nuit() {
+            document.body.style.backgroundColor = "black";
+            document.body.style.color = "white";
+            document.querySelector(".Container").style.backgroundColor = "#222";
+        }
+
+        function Jour() {
+            document.body.style.backgroundColor = "white";
+            document.body.style.color = "black";
+            document.querySelector(".Container").style.backgroundColor = "white";
+        }
+    </script>
+</body>
+</html>

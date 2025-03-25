@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Scripts JS</title>
+</head>
+<body>
+
+  <h2>Tester trois variables numériques</h2>
+  <button id="testerVariables">Tester les variables</button>
+  <div id="resultatTest"></div>
+
+  <script>
+    document.getElementById("testerVariables").addEventListener("click", function() {
+      let nombre1, nombre2, nombre3;
+
+      // Fonction pour valider si l'entrée est un nombre
+      function estUnNombre(valeur) {
+        return !isNaN(valeur) && parseFloat(valeur) == valeur;
+      }
+
+      // Demander à l'utilisateur de saisir les nombres avec validation
+      do {
+        nombre1 = prompt("Veuillez saisir la première valeur numérique:");
+        if (!estUnNombre(nombre1)) {
+          alert("Ce n'est pas un nombre. Veuillez saisir une valeur numérique.");
+        }
+      } while (!estUnNombre(nombre1));
+      nombre1 = parseFloat(nombre1); // Convertir en nombre
+
+      do {
+        nombre2 = prompt("Veuillez saisir la deuxième valeur numérique:");
+        if (!estUnNombre(nombre2)) {
+          alert("Ce n'est pas un nombre. Veuillez saisir une valeur numérique.");
+        }
+      } while (!estUnNombre(nombre2));
+      nombre2 = parseFloat(nombre2); // Convertir en nombre
+
+      do {
+        nombre3 = prompt("Veuillez saisir la troisième valeur numérique:");
+        if (!estUnNombre(nombre3)) {
+          alert("Ce n'est pas un nombre. Veuillez saisir une valeur numérique.");
+        }
+      } while (!estUnNombre(nombre3));
+      nombre3 = parseFloat(nombre3); // Convertir en nombre
+
+      let resultat = "";
+
+      // Tester les variables
+      if (nombre1 === nombre2 && nombre1 === nombre3) {
+        resultat = "Les trois variables sont identiques.";
+      } else if (nombre1 === nombre2 || nombre1 === nombre3 || nombre2 === nombre3) {
+        resultat = "Deux des variables sont de valeurs égales.";
+      } else {
+        resultat = "Les trois variables sont différentes.";
+      }
+
+      document.getElementById("resultatTest").textContent = resultat;
+    });
+  </script>
+
+</body>
+</html>

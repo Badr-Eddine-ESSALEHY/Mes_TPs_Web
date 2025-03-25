@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Permuter</title>
+</head>
+<body>
+    <input type="number" id="Firstnumber"> 
+    <input type="number" id="Secondnumber"> 
+    <button onclick="swapValues()">Permuter</button>
+    <script>
+        function swapValues(){
+        var a = parseInt(document.getElementById("Firstnumber").value);
+        var b = parseInt(document.getElementById("Secondnumber").value);
+        var temp = a ;
+            a = b ;
+            b = temp;
+            document.getElementById("Firstnumber").value = a;
+            document.getElementById("Secondnumber").value = b;
+        }  
+    </script>
+</body>
+</html>

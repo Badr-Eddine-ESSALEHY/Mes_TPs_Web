@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somme</title>
+</head>
+<body>
+    <input type="number" id="Firstnumber"> +
+    <input type="number" id="Secondnumber"> 
+    <label>= <span id="results"></span></label>
+    <button onclick="myFunction()">Calculer</button>
+
+    <script>
+        function myFunction() {
+            var Firstvalue = parseFloat(document.getElementById("Firstnumber").value) ;
+            var Results = Firstvalue + Secondvalue;
+            
+            document.getElementById("results").textContent = Results;
+        }
+    </script>
+</body>
+</html>

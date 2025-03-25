@@ -1,0 +1,56 @@
+/* Centrer le formulaire */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: white; /* Ajuste selon besoin */
+    margin: 0;
+}
+
+/* Style du formulaire */
+form {
+    width: 460px;
+    padding: 20px;
+    border: 4px solid gold;
+    border-top-right-radius: 120px;
+    border-radius: 50px;
+    background-color: lightblue;
+    position: relative;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Titre du formulaire */
+h2 {
+    color: blue;
+    font-weight: bold;
+    text-decoration: underline;
+    text-align: left;
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+/* Style des champs */
+input, select, textarea {
+    width: 100%;
+    padding: 5px;
+    margin: 5px 0;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+/* Boutons radio */
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+/* Bouton fichier */
+input[type="file"] {
+    border: none;
+}
+
+/* Alignement des labels */
+label {
+    display: block;
+    font-weight: bold;
+}

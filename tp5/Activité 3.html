@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fonctions JavaScript</title>
+</head>
+<body>
+    <script src="functions.js"></script>
+
+    <script>
+        // 1. Fonction multiplier
+function multiplier(a, b) {
+  return a * b;
+}
+
+// 2. Fonction lastElement
+function lastElement(arr) {
+  if (arr.length === 0) {
+    return null;
+  }
+  return arr[arr.length - 1];
+}
+
+// 3. Fonction capitalize
+function capitalize(str) {
+  if (str.length === 0) {
+    return str;
+  }
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
+// 4. Fonction sumArray
+function sumArray(arr) {
+  let sum = 0;
+  for (let num of arr) {
+    sum += num;
+  }
+  return sum;
+}
+
+// 5. Fonction returnDay
+function returnDay(num) {
+  const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+  if (num < 1 || num > 7) {
+    return null;
+  }
+  return days[num - 1];
+}
+
+// Exercice: Gestion des exceptions pour la note
+function afficherNote(note) {
+  try {
+    if (note < 0 || note > 20) {
+      throw "Note hors intervalle";
+    }
+    console.log("Note valide : " + note);
+  } catch (erreur) {
+    console.log(erreur);
+  }
+}
+
+// Exemples d'utilisation
+console.log(multiplier(5, 3)); // 15
+console.log(lastElement([1, 2, 3])); // 3
+console.log(lastElement([])); // null
+console.log(capitalize("eggplant")); // Eggplant
+console.log(sumArray([1, 2, 3, 4, 5])); // 15
+console.log(returnDay(1)); // Monday
+console.log(returnDay(7)); // Sunday
+console.log(returnDay(8)); // null
+
+afficherNote(15); // Note valide : 15
+afficherNote(25); // Note hors intervalle
+    </script>
+</body>
+</html>

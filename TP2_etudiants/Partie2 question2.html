@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bordures avec Image de Fond</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <h1>insérer une image en arrière-plan</h1>
+
+  <div class="border-style solid">style-bordure:trait plein</div>
+  <div class="border-style double">style-bordure:double trait concentrique d'une largeur d'au moins trois pixels</div>
+  <div class="border-style groove">style-bordure:bordure dont les côtés supérieur et gauche sont plus foncés que les côtés droit et inférieur</div>
+  <div class="border-style outset">style-bordure:inverse de inset</div>
+  <div class="border-style inset">style-bordure:bordure qui semble gravée dans le conteneur</div>
+  <div class="border-style ridge">style-bordure:bordure qui semble en relief par rapport au conteneur</div>
+  <div class="border-style dotted">style-bordure:bordure en pointillés, alternant points et espaces</div>
+  <div class="border-style dashed">style-bordure:bordure en pointillés, alternant tirets et espaces</div>
+  <div class="border-style none">style-bordure:pas de bordure</div>
+</body>
+</html>
+<style>
+    body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-image: url('arriere-plans-des-pages-Web.jpg');
+  background-size: cover; 
+  background-repeat: no-repeat; 
+
+}
+
+h1 {
+  margin-bottom: 20px;
+  color: red;
+}
+
+.border-style {
+  width: 80%;
+  margin: 10px auto;
+  padding: 15px;
+  border: 4px solid blue;
+  box-sizing: border-box;
+}
+
+.border-style.solid {
+  border-style: solid;
+}
+
+.border-style.double {
+  border-style: double;
+  border-width: 6px;
+}
+
+.border-style.groove {
+  border-style: groove;
+}
+
+.border-style.outset {
+  border-style: outset;
+}
+
+.border-style.inset {
+  border-style: inset;
+}
+
+.border-style.ridge {
+  border-style: ridge;
+}
+
+.border-style.dotted {
+  border-style: dotted;
+}
+
+.border-style.dashed {
+  border-style: dashed;
+}
+
+.border-style.none {
+  border: none;
+}
+</style>

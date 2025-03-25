@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fiche d’évaluation</title>
+</head>
+<body>
+<table border="0">
+  <tr>
+    <td><label for="prenom">Prénom :</label></td>
+    <td><input type="text" id="prenom" name="Prénom" placeholder="Votre Prénom" maxlength="25" size="25"></td>
+    <td><label for="nom">Nom :</label></td>
+    <td><input type="text" id="nom" name="nom" placeholder="Votre Nom" maxlength="25" size="25"></td>
+  </tr>
+  <tr>
+    <td><label for="telephone">Téléphone :</label></td>
+    <td><input type="tel" id="telephone" name="telephone" placeholder="N° de Téléphone" maxlength="25" size="25"></td>
+    <td><label for="email">Email :</label></td>
+    <td><input type="email" id="email" name="email" placeholder="Votre Email" maxlength="25" size="25"></td>
+  </tr>
+</table>
+
+<p><b>Évaluation globale de la session de formation</b></p>
+<form>
+  <label><input type="radio" name="evaluation" value="Excellent"> Excellent</label>
+  <label><input type="radio" name="evaluation" value="Bon"> Bon</label>
+  <label><input type="radio" name="evaluation" value="Passable"> Passable</label>
+  <label><input type="radio" name="evaluation" value="Médiocre"> Médiocre</label>
+</form>
+
+<p><b>La durée de formation</b></p>
+<label><input type="radio" name="duree" value="Suffisante"> Suffisante</label>&emsp;&emsp;
+<label><input type="radio" name="duree" value="Courte"> Courte</label>&emsp;&emsp;
+<label>A prolonger de </label>
+<select name="prolongation">
+  <option>Deux jours</option>
+  <option>Quatre jours</option>
+  <option>Une semaine</option>
+  <option>Deux semaines</option>
+  <option>Un mois</option>
+</select> <br>
+
+<p><b>Vos Remarques et suggestions :</b></p>
+<textarea cols="30" rows="3" placeholder="Entrez vos remarques ici..."></textarea>
+<p><b>Quelles autres formations souhaiteriez-vous recevoire:</b></p>
+<input type="checkbox" name="formation" value="Buretique">Buretique<br>
+<input type="checkbox" name="formation" value="Réseau">Réseau<br>
+<input type="checkbox" name="formation" value="VisualC">VisualC<br>
+<input type="checkbox" name="formation" value="Java">Java<br>
+<br>
+<button type="submit"> Envoyer </button>&emsp;&emsp;&emsp;&emsp;<button type="reset"> Recommancer a zero </button>
+</body>
+</html>

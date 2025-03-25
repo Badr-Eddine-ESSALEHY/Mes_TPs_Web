@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Liste de courses</title>
+    <style>
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Liste de courses</h1>
+
+    <input type="text" id="article" placeholder="Entrer votre objet">
+    <button id="ajouter">Ajouter l'objet</button>
+
+    <ul id="liste">
+        <li>DWM <button class="supprimer">Supprimer</button></li>
+        <li>GI <button class="supprimer">Supprimer</button></li>
+        <li>IATE <button class="supprimer">Supprimer</button></li>
+        <li>DSIC <button class="supprimer">Supprimer</button></li>
+    </ul>
+
+    <script>
+        const articleInput = document.getElementById("article");
+        const ajouterBouton = document.getElementById("ajouter");
+        const listeCourses = document.getElementById("liste");
+
+        ajouterBouton.addEventListener("click", function() {
+            const articleTexte = articleInput.value.trim();
+
+            if (articleTexte !== "") {
+                const nouvelArticle = document.createElement("li");
+                nouvelArticle.textContent = articleTexte + " ";
+
+                const supprimerBouton = document.createElement("button");
+                supprimerBouton.textContent = "Supprimer";
+                supprimerBouton.classList.add("supprimer");
+
+                nouvelArticle.appendChild(supprimerBouton);
+                listeCourses.appendChild(nouvelArticle);
+
+                articleInput.value = "";
+                articleInput.focus();
+            }
+        });
+
+        listeCourses.addEventListener("click", function(event) {
+            if (event.target.classList.contains("supprimer")) {
+                event.target.parentElement.remove();
+            }
+        });
+    </script>
+
+</body>
+</html>

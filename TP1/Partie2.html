@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Les Images et le Texte</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            margin-top: 20px; 
+        }
+
+        img {
+            margin: 10px; 
+        }
+
+        
+    
+
+        p img[align="middle"] {
+            vertical-align: middle;
+        }
+
+        p img[align="top"] {
+            vertical-align: top;
+        }
+
+        p img[align="left"] {
+            float: left;
+            margin-right: 15px;
+        }
+
+        p img[align="right"] {
+            float: right;
+            margin-left: 15px; 
+        }
+        p::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Les images et le texte - 1</h1>
+
+    <p><img src="images/green.gif" alt="Image 1" align="bottom"> Par défaut, le bas de l'image est aligné avec le début du texte. Si le texte comporte plusieurs lignes de texte, la deuxième et les suivantes sont placées sous l'image.</p>
+
+    <p><img src="images/yellow.gif" alt="Image 2" align="middle"> Le milieu de l'image est aligné avec le début du texte. Si le texte comporte plusieurs lignes de texte, la deuxième et les suivantes sont placées sous l'image.</p>
+
+    <p><img src="images/red.gif" alt="Image 3" align="top"> Le haut de l'image est aligné avec le début du texte. Si le texte comporte plusieurs lignes de texte, la deuxième et les suivantes sont placées sous l'image.</p>
+
+    <h1>Les images et le texte - 2</h1>
+
+    <p><img src="images/green.gif" alt="Image 4" align="left"> L'image est alignée à gauche et en même temps le texte s'aligne en haut. Si le texte comporte plusieurs lignes de texte, l'ensemble se place comme un paragraphe à la droite de l'image.</p>
+
+    <p><img src="images/red.gif" alt="Image 5" align="right"> L'image est alignée à droite et en même temps le texte s'aligne en haut. Si le texte comporte plusieurs lignes de texte, l'ensemble se place comme un paragraphe complet à gauche de l'image.</p>
+
+    <p><img src="images/yellow.gif" alt="Image 6" align="left"> Il est possible de placer un bloc de texte entre deux images ; l'une placée à gauche et l'autre alignée à droite. <img src="image7.png" alt="Image 7" align="right"></p>
+
+
+</body>
+</html>

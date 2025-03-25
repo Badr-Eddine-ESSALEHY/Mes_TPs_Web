@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Temporisateur et Alerte</title>
+    <style>
+        #temporisateur {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Temporisateur et Alerte</h1>
+
+    <div id="temporisateur">10</div>
+    <button id="demarrer">Démarrer le temporisateur</button>
+    <button id="arreter">Arrêter le temporisateur</button>
+
+    <script>
+        let tempsRestant = 10;
+        const temporisateurElement = document.getElementById("temporisateur");
+        const demarrerBouton = document.getElementById("demarrer");
+        const arreterBouton = document.getElementById("arreter");
+        let intervalId;
+        let timeoutId;
+
+        function miseAJourTemporisateur() {
+            temporisateurElement.textContent = tempsRestant;
+            if (tempsRestant > 0) {
+                tempsRestant--;
+            } else {
+                clearInterval(intervalId);
+                alert("Temps écoulé !");
+            }
+        }
+
+        function demarrerTemporisateur() {
+            tempsRestant = 10;
+            temporisateurElement.textContent = tempsRestant;
+            intervalId = setInterval(miseAJourTemporisateur, 1000);
+            timeoutId = setTimeout(function() {
+                alert("10 secondes se sont écoulées !");
+            }, 10000);
+        }
+
+        function arreterTemporisateur() {
+            clearInterval(intervalId);
+            clearTimeout(timeoutId);
+            temporisateurElement.textContent = "Arrêté";
+        }
+
+        demarrerBouton.addEventListener("click", demarrerTemporisateur);
+        arreterBouton.addEventListener("click", arreterTemporisateur);
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Diaporama d'Images</title>
+    <style>
+        #diaporama {
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Diaporama automatique</h1>
+
+    <img id="diaporama" src="images/First.jpg" alt="Image 1">
+
+    <button id="stopButton">stop !</button>
+    <button id="startButton">on y retourne !</button>
+
+    <script>
+        let imageElement = document.getElementById("diaporama");
+        let stopButton = document.getElementById("stopButton");
+        let startButton = document.getElementById("startButton");
+
+        let image1 = "images/First.jpg";
+        let image2 = "images/Second.webp";
+        let currentImage = image1;
+        let intervalId; // Déclarer intervalId en dehors des fonctions
+
+        function changerImage() {
+            if (currentImage === image1) {
+                currentImage = image2;
+            } else {
+                currentImage = image1;
+            }
+            imageElement.src = currentImage;
+        }
+
+        function demarrerDiaporama() {
+            intervalId = setInterval(changerImage, 2000);
+        }
+
+        function arreterDiaporama() {
+            clearInterval(intervalId);
+        }
+
+        demarrerDiaporama();
+
+        stopButton.addEventListener("click", arreterDiaporama);
+        startButton.addEventListener("click", demarrerDiaporama);
+    </script>
+
+</body>
+</html>
